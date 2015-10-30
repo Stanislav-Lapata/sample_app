@@ -12,12 +12,18 @@
 require 'securerandom'
 
 def secure_token
+	# Указывает путь к файлу
 	token_file = Rails.root.join('.secret')
+	# Проверяет есть ли этот файл
 	if File.exist?(token_file)
+	# Читает файл убирая все переносы строк и табуляции
 		File.read(token_file).chomp
 	else
+	# Создает токен в котором 128 рандомных символов
 		token = SecureRandom.hex(64)
+	# Создает файл и записывает в него токен	
 		File.write(token_file, token)
+	# Выдает значение токена из метода
 		token	
 	end
 end
