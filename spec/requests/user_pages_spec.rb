@@ -131,7 +131,7 @@ describe "User pages" do
       before do
         fill_in "Name",             with: "lerssett"
         fill_in "Email",            with: "LersSett@gmail.com"
-        fill_in "Password",         with: "Nail30031812"
+        fill_in "Password",         with: "Nail30031812", match: :prefer_exact
         fill_in "Confirm Password", with: "Nail30031812"
       end
 

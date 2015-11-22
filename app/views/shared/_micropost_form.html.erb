@@ -1,8 +1,8 @@
-<%= form_for @micropost do |f| %>
+<%= simple_form_for @micropost do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.input :content, label: false, as: :text, placeholder: "Compose new micropost..." %>
     <span id="charlimitinfo">У Вас осталось 140 символов.</span>
   </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= f.button :submit, "Post", class: "btn btn-large btn-primary" %>
 <% end %>
